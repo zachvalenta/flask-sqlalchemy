@@ -999,7 +999,7 @@ class SQLAlchemy:
             op(bind=self.get_engine(app, bind), **extra)
 
     def create_all(self, bind="__all__", app=None):
-        """Creates all tables.
+        """Creates all tables. Conditional by default, will not attempt to recreate tables already present in the target database.
 
         .. versionchanged:: 0.12
            Parameters were added
